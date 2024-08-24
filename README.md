@@ -1,0 +1,1 @@
+Simple demo of a gallery site with automatic thumbnails and a character select for a friend.
