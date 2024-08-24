@@ -12,7 +12,6 @@
 
     // your list of files
     const files = [ "kyren (10)" , "kyren (14)" , "kyren (16)" , "kyren (19)" , "sasha" , "sasha (7)" , "sasha (20)" , "sasha (25)" , "sasha (28)" ]
-    console.log(files)
 
     // boil down the files list to get the characters list
     const characters = files.reduce((list, file) => {
@@ -35,7 +34,13 @@
     
     // the empty array here is the initial value of the list variable for the reduce function
     }, [])
-    console.log(characters)
+
+    // function that brings up the modal
+    // depends on external code
+    function thumbClick(event) {
+        document.getElementById("img01").src = event.target.src
+        document.getElementById("modal01").style.display = "block"
+    }
 
     // function to redraw all your thumbnails
     function rerender() {
@@ -60,9 +65,8 @@
             // add the thumbnail class so you can style them in your css sheet
             thumbnail.classList.add("thumbnail")
 
-            // IMPORTANT:
-            // you will need to add an event listener for your modal here
-            thumbnail.addEventListener("click", onclick) // example
+            // event listener for your modal
+            thumbnail.addEventListener("click", (event) => { thumbClick(event) })
 
             // add the thumbnail to the root element
             root.appendChild(thumbnail)
