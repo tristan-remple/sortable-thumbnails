@@ -62,6 +62,7 @@
 
             // IMPORTANT:
             // you will need to add an event listener for your modal here
+            thumbnail.addEventListener("click", onclick) // example
 
             // add the thumbnail to the root element
             root.appendChild(thumbnail)
